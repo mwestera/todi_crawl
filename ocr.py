@@ -44,6 +44,7 @@ def todi_from_image(image):
     x, y = image.size
     image = image.crop((0, y - 40, x, y))
 
+    # TODO: Oooh:  config="-c tessedit_char_whitelist=HL%-!*"
     ocr_result = pytesseract.image_to_string(image, lang='nld')
 
     if len(ocr_result) < 5:
